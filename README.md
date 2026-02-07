@@ -102,9 +102,11 @@ API_KEY = st.secrets["TMDB_API_KEY"]
 1️⃣ Clone the repository
 
 git clone https://github.com/your-username/movie-recommendation-system.git
+
 cd movie-recommendation-system
 
 2️⃣ Install dependencies
+
 pip install -r requirements.txt
 
 3️⃣ Add TMDB API key
@@ -114,6 +116,7 @@ Create a .streamlit/secrets.toml file:
 TMDB_API_KEY = "your_api_key_here"
 
 4️⃣ Run the app
+
 streamlit run app.py
 
 📈 Future Improvements
@@ -131,5 +134,7 @@ Improve UI with animations
 👨‍💻 Author
 
 Meganath M
+
 CSE (AI & ML) Student
+
 Movie Recommendation System using NLP & Streamlit

@@ -1,4 +1,5 @@
 🎬 Movie Recommendation System (Streamlit + TMDB)
+
             A keyword-based Movie Recommendation System built using Natural Language Processing (NLP) techniques and deployed as a web application using Streamlit.
            The app recommends movies based on user-entered keywords (like love, thriller, ghost, romance) and displays real-time posters fetched from TMDB API.
 
@@ -22,16 +23,20 @@ Fetches movie posters dynamically using TMDB API
 Deployed securely using Streamlit Cloud
 
 🛠️ Tech Stack
-Category	Tools
-Programming Language	Python
-Web Framework	Streamlit
-NLP	CountVectorizer
-Similarity Measure	Cosine Similarity
-Data Processing	Pandas, NumPy
-API	TMDB API
-Deployment	Streamlit Cloud
-Version Control	GitHub
+
+Category	                       Tools
+Programming Language	           Python
+Web Framework	           Streamlit
+NLP	                       CountVectorizer
+Similarity Measure                 Cosine Similarity
+Data Processing	           Pandas, NumPy
+
+API	                       TMDB API
+Deployment        	           Streamlit Cloud
+Version Control	           GitHub
+
 📂 Project Structure
+
 movie-recommendation-system/
 │
 ├── app.py                  # Main Streamlit app
@@ -80,6 +85,7 @@ Accessed safely using:
 API_KEY = st.secrets["TMDB_API_KEY"]
 
 📦 Installation & Local Run
+
 1️⃣ Clone the repository
 git clone https://github.com/your-username/movie-recommendation-system.git
 cd movie-recommendation-system

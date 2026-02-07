@@ -28,14 +28,7 @@ def load_data():
         on_bad_lines="skip"
     )
 
-    credits = pd.read_csv(
-        "tmdb_5000_credits.csv",
-        encoding="latin-1",
-        engine="python",
-        on_bad_lines="skip"
-    )
-
-    movies = movies.merge(credits, on="title")
+    
     movies = movies[['movie_id', 'title', 'overview', 'genres', 'keywords', 'cast', 'crew']]
     movies.dropna(inplace=True)
 
@@ -157,3 +150,4 @@ if st.button("Recommend"):
                     """,
                     unsafe_allow_html=True
                 )
+

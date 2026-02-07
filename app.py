@@ -20,19 +20,17 @@ st.set_page_config(
 # LOAD DATA (CACHED)
 # -----------------------
 @st.cache_data
-@st.cache_data
+
 def load_data():
-    movies = pd.read_csv(
-        "tmdb_5000_movies.csv",
-        encoding="latin-1",
-        engine="python",
-        on_bad_lines="skip"
-    )
+    movies = pd.read_csv("final_movies.csv")
 
-    movies = movies[['movie_id', 'title', 'overview', 'genres', 'keywords']]
-    movies.dropna(inplace=True)
+    movies['genres'] = movies['genres'].apply(ast.literal_eval)
+    movies['keywords'] = movies['keywords'].apply(ast.literal_eval)
 
-    return movies
+    movies['tags'] = movies['genres'] + movies['keywords']
+    movies['tags'] = movies['tags'].apply(lambda x: " ".join(x))
+
+    return movies[['movie_id', 'title', 'tags']]
 
 
 movies = load_data()
@@ -151,6 +149,7 @@ if st.button("Recommend"):
                     """,
                     unsafe_allow_html=True
                 )
+
 
 
 

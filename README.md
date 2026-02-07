@@ -24,23 +24,23 @@ Deployed securely using Streamlit Cloud
 
 🛠️ Tech Stack
 
-Category	                       Tools
+Category	                  -   Tools
 
-Programming Language	           Python
+Programming Language	       -    Python
 
-Web Framework	           Streamlit
+Web Framework	       -    Streamlit
 
-NLP	                       CountVectorizer
+NLP	                    -   CountVectorizer
 
-Similarity Measure                 Cosine Similarity
+Similarity Measure              -   Cosine Similarity
 
-Data Processing	           Pandas, NumPy
+Data Processing	        -   Pandas, NumPy
 
-API	                       TMDB API
+API	                   -    TMDB API
 
-Deployment        	           Streamlit Cloud
+Deployment        	       -    Streamlit Cloud
 
-Version Control	           GitHub
+Version Control	       -    GitHub
 
 
 📂 Project Structure

@@ -25,24 +25,37 @@ Deployed securely using Streamlit Cloud
 🛠️ Tech Stack
 
 Category	                       Tools
+
 Programming Language	           Python
+
 Web Framework	           Streamlit
+
 NLP	                       CountVectorizer
+
 Similarity Measure                 Cosine Similarity
+
 Data Processing	           Pandas, NumPy
 
 API	                       TMDB API
+
 Deployment        	           Streamlit Cloud
+
 Version Control	           GitHub
+
 
 📂 Project Structure
 
 movie-recommendation-system/
+
 │
 ├── app.py                  # Main Streamlit app
+
 ├── final_movies.csv        # Preprocessed dataset (movie_id, title, tags)
+
 ├── requirements.txt        # Python dependencies
+
 ├── README.md               # Project documentation
+
 
 ⚙️ How It Works
 
@@ -87,6 +100,7 @@ API_KEY = st.secrets["TMDB_API_KEY"]
 📦 Installation & Local Run
 
 1️⃣ Clone the repository
+
 git clone https://github.com/your-username/movie-recommendation-system.git
 cd movie-recommendation-system
 
@@ -115,6 +129,7 @@ Add user-based collaborative filtering
 Improve UI with animations
 
 👨‍💻 Author
+
 Meganath M
 CSE (AI & ML) Student
 Movie Recommendation System using NLP & Streamlit

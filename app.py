@@ -29,8 +29,8 @@ def load_data():
     )
 
     
-    movies = movies[['movie_id', 'title', 'overview', 'genres', 'keywords', 'cast', 'crew']]
-    movies.dropna(inplace=True)
+   movies = movies[['movie_id','title','overview','genres','keywords']]
+   movies.dropna(inplace=True)
 
     return movies
 
@@ -150,4 +150,5 @@ if st.button("Recommend"):
                     """,
                     unsafe_allow_html=True
                 )
+
 

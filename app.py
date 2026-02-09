@@ -6,8 +6,14 @@ import urllib.parse
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+def load_css():
+    with open("styles/style.css") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css()
+
 # ---------------- PAGE CONFIG ----------------
-st.set_page_config(page_title="Movie Recommendation System", layout="wide")
+st.set_page_config(page_title="Movie Recommendation System", page_icon="🎥", layout="wide")
 
 # ---------------- LOAD DATA ----------------
 @st.cache_data
@@ -55,36 +61,42 @@ def fetch_poster(movie_name):
         return None
 
 # ---------------- UI ----------------
-st.title("🎬 Movie Recommendation System")
-st.write("Keyword-based movie recommendation with TMDB posters")
+st.markdown("""
+<h1>🎬 Movie Recommendation System</h1>
+<p style="font-size:1.1rem; opacity:0.8; max-width:700px;">
+Discover movies by mood, genre, or vibe.  
+Type a keyword and let the system do the magic ✨
+</p>
+""", unsafe_allow_html=True)
 
-keyword = st.text_input("Enter a keyword (love, romance, ghost, thriller, etc)")
 
-if st.button("Recommend"):
+keyword = st.text_input(
+    "Enter a keyword (love, romance, ghost, thriller, etc)",
+    key="keyword_input"
+)
+
+clicked = st.button("Recommend")
+
+if clicked:
     if keyword.strip() == "":
         st.warning("Please enter a keyword")
     else:
         results = recommend_by_keywords(keyword)
 
-        st.subheader("Recommended Movies")
+        st.subheader("🍿 Recommended Movies")
         cols = st.columns(5)
 
         for i, movie in enumerate(results):
             poster = fetch_poster(movie)
 
             with cols[i]:
-                st.caption(movie)
                 if poster:
-                    st.image(poster, width=200)
+                    st.image(poster, use_container_width=True)
                 else:
-                    st.markdown(
-                        f"""
-                        <div style="width:200px;height:300px;
-                        display:flex;align-items:center;justify-content:center;
-                        background:#f0f0f0;border-radius:10px;
-                        text-align:center;font-weight:bold;">
-                        {movie}
-                        </div>
-                        """,
-                        unsafe_allow_html=True
+                    st.image(
+                        "https://via.placeholder.com/300x450?text=No+Poster",
+                        use_container_width=True
                     )
+
+                st.markdown(f'<div class="movie-title">{movie}</div>', unsafe_allow_html=True)
+                st.markdown('</div>', unsafe_allow_html=True)

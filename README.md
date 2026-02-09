@@ -1,3 +1,8 @@
+## License
+
+This project is licensed under the MIT License.
+
+
 🎬 Movie Recommendation System (Streamlit + TMDB)
 
             A keyword-based Movie Recommendation System built using Natural Language Processing (NLP) techniques and deployed as a web application using Streamlit.
@@ -138,3 +143,4 @@ Meganath M
 CSE (AI & ML) Student
 
 Movie Recommendation System using NLP & Streamlit
+
